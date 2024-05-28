@@ -4,22 +4,7 @@ import AddItem from "./components/AddItem";
 import Tabs from "./components/Tabs";
 
 function App() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: "Pick up mail", dueDate: "Due today", completed: false },
-    { id: 2, text: "Buy cat food", dueDate: "4/17/18", completed: false },
-    {
-      id: 3,
-      text: "Get gift for grandma",
-      dueDate: "Due today",
-      completed: false,
-    },
-    {
-      id: 4,
-      text: "Doctors appointment",
-      dueDate: "5/03/18",
-      completed: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const addTodo = (text, dueDate) => {
     setTodos([
