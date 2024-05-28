@@ -27,6 +27,9 @@ function App() {
       { id: todos.length + 1, text, dueDate, completed: false },
     ]);
   };
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   const toggleComplete = (id) => {
     setTodos(
@@ -37,9 +40,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-100 flex items-center justify-center">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4">CHORES</h1>
+    <div className="min-h-screen bg-[#44446B] flex items-center justify-center">
+      <div className="bg-[#31315B] shadow-lg rounded-lg p-6 w-full max-w-md">
+        <h1 className="text-2xl text-slate-400 font-bold mb-4">To Do App</h1>
         <AddItem addTodo={addTodo} todos={todos} />
         <Tabs>
           <div label="To Do">
@@ -49,7 +52,7 @@ function App() {
                 toggleComplete={toggleComplete}
               />
             ) : (
-              <p>There are no ToDos</p>
+              <p className="text-center text-slate-200">There are no ToDos</p>
             )}
           </div>
           <div label="Completed">
@@ -57,9 +60,10 @@ function App() {
               <TodoList
                 todos={todos.filter((todo) => todo.completed)}
                 toggleComplete={toggleComplete}
+                deleteTodo={deleteTodo}
               />
             ) : (
-              <p>No Completed To Dos</p>
+              <p className="text-center text-slate-200">No Completed To Dos</p>
             )}
           </div>
         </Tabs>

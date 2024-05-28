@@ -34,14 +34,14 @@ const AddItem = ({ addTodo, todos }) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Add Item"
-        className="w-full p-2 mb-2 border rounded"
+        className="w-full h-11 outline-none py-2 px-4 mb-2 rounded bg-[#282851] text-white"
       />
       {error && <div className="text-red-500 mb-2">{error}</div>}
       <div className="relative mb-2">
         <button
           type="button"
           onClick={() => setShowDatePicker(!showDatePicker)}
-          className="p-2 border rounded flex items-center justify-center w-full"
+          className="p-2 bg-[#545C89] text-white rounded flex items-center justify-center w-full"
         >
           <FaCalendarAlt />
           <span className="ml-2">
@@ -63,7 +63,7 @@ const AddItem = ({ addTodo, todos }) => {
       </div>
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white p-2 rounded"
+        className="w-full bg-[#3D79B1] text-white p-2 rounded"
       >
         Add
       </button>

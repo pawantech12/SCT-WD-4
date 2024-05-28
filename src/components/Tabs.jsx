@@ -5,11 +5,11 @@ const Tabs = ({ children }) => {
 
   return (
     <div>
-      <div className="flex border-b">
+      <div className="flex justify-around border-b border-[#545C89] mb-4">
         {React.Children.map(children, (child, index) => (
           <button
-            className={`p-2 ${
-              activeTab === index ? "border-b-2 border-blue-500" : ""
+            className={`p-2 flex-1 text-center rounded-ss-md rounded-se-md ${
+              activeTab === index ? "bg-[#545C89] text-white" : "text-white"
             }`}
             onClick={() => setActiveTab(index)}
           >
@@ -17,7 +17,7 @@ const Tabs = ({ children }) => {
           </button>
         ))}
       </div>
-      <div className="">{children[activeTab]}</div>
+      <div>{children[activeTab]}</div>
     </div>
   );
 };
